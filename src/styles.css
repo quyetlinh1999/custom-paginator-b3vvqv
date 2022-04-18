@@ -1,0 +1,42 @@
+body {
+  padding: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ui-paginator {
+  text-align: left !important;
+  position: relative;
+}
+
+.ui-paginator:not(.firstPageActive) .ui-paginator-pages .ui-paginator-page:first-child {
+   margin-left: 40px;
+}
+
+.ui-paginator:not(.lastPageActive) .ui-paginator-pages .ui-paginator-page:last-child {
+   margin-right: 50px;
+}
+
+.firstPage, .lastPage {
+    height: 2.286em;
+    line-height: 2.286em;
+    position: absolute;
+    margin-left: -115px;
+    padding: 0 5px;
+    top: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.firstPage {
+  margin-left: 0;
+  left:65px;
+}
+
+.lastPageActive .lastPage {
+  display: none;
+}
+
+.ui-paginator .ui-paginator-right-content {
+    float: none !important;
+    display: inline-block;
+}

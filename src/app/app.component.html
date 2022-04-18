@@ -1,0 +1,27 @@
+<h2>Custom paginator</h2>
+
+<p-paginator
+  [rows]="10"
+  [totalRecords]="1000"
+  pageLinkSize="5"
+  [templateLeft]="leftSide"
+  [templateRight]="rightSide"
+  #pagin
+  [styleClass]="
+    (pagin.getPage() > 2 ? '' : 'firstPageActive') +
+    (pagin.getPage() > pagin.getPageCount() - 4 ? 'lastPageActive' : '')
+  "
+></p-paginator>
+
+<ng-template #leftSide
+  ><a class="firstPage" *ngIf="true" (click)="pagin.changePage(0)">1 ...</a>
+</ng-template>
+
+<ng-template #rightSide
+  ><a
+    class="lastPage"
+    *ngIf="true"
+    (click)="pagin.changePage(pagin.getPageCount() - 1)"
+    >... {{ pagin.getPageCount() }}</a
+  >
+</ng-template>
